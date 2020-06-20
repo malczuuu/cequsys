@@ -9,12 +9,12 @@ using namespace std;
 class solver_t {
 private:
     /**
-     * Represent A in the system of linear equations matrix form (A * x = b).
+     * Represents A in the system of linear equations matrix form (A * x = b).
      */
     vector<double> _a_matr;
 
     /**
-     * Represent b in the system of linear equations matrix form (A * x = b).
+     * Represents b in the system of linear equations matrix form (A * x = b).
      */
     vector<double> _b_vect;
 
