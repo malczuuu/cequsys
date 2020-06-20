@@ -20,3 +20,14 @@ Loads matrix and vector for the system of linear equation to solve from `input.t
     $ g++ cequsys.cpp -o cequsys
     $ ./cequsys
     ```
+
+Generate equation system with following pattern with command `./gen {size}`.
+
+```text
+2 2 0 0 0 0 ; 2
+2 2 2 0 0 0 ; 2
+0 2 2 2 0 0 ; 2
+0 0 2 2 2 0 ; 2
+0 0 0 2 2 2 ; 2
+0 0 0 0 2 2 ; 2
+```
