@@ -46,6 +46,8 @@ private:
         }
     }
 
+    static bool _equals(double a, double b) { return abs(a - b) < 1e-9; }
+
 public:
     explicit solver_t(int size)
         : _size(size)
@@ -75,9 +77,9 @@ public:
     void decompose_lu()
     {
         for (int i = 0; i < size(); ++i) {
-            if (get(i, i) == 0.0) {
+            if (_equals(get(i, i), 0.0)) {
                 _diag_fix(i);
-                if (get(i, i) == 0.0) {
+                if (_equals(get(i, i), 0.0)) {
                     continue;
                 }
             }
