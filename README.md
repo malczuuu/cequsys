@@ -2,6 +2,8 @@
 
 Solving system of linear equations.
 
+Loads matrix and vector for the system of linear equation to solve from `input.txt` file located in working directory.
+
 ## Usage instructions
 
 * Using CMake
@@ -16,4 +18,5 @@ Solving system of linear equations.
 
     ```bash
     $ g++ cequsys.cpp -o cequsys
+    $ ./cequsys
     ```
