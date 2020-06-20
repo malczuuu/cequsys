@@ -21,7 +21,7 @@ Loads matrix and vector for the system of linear equation to solve from `input.t
     $ ./cequsys
     ```
 
-Generate equation system with following pattern with command `./gen {size}`.
+Generate equation system with following pattern with command `./gen {size} > input.txt`.
 
 ```text
 2 2 0 0 0 0 ; 2
