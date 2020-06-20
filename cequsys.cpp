@@ -183,7 +183,14 @@ static vector<string> split_string(string str, const string& separator)
     return result;
 }
 
-static double fetch_number(const string& line) { return stod(line); }
+static double fetch_number(const string& line)
+{
+    if (line.find_first_of('/') != -1) {
+        vector<string> fraction = split_string(line, "/");
+        return stod(fraction[0]) / stod(fraction[1]);
+    }
+    return stod(line);
+}
 
 static vector<double> fetch_numbers(const string& line)
 {
