@@ -1,9 +1,10 @@
 #include "loader.hpp"
+#include "equsys.hpp"
 #include "stringutil.hpp"
 
 using namespace std;
 
-void load_input(ifstream& input, matrix<double>& a_matr, vector<double>& b_vect)
+void load_input(ifstream& input, equsys_t& equsys)
 {
     string line;
     getline(input, line);
@@ -11,17 +12,16 @@ void load_input(ifstream& input, matrix<double>& a_matr, vector<double>& b_vect)
     vector<double> matr_row = fetch_numbers(segments[0]);
     int dimension = matr_row.size();
 
-    a_matr.resize(dimension, dimension);
-    b_vect.resize(dimension);
+    equsys.resize(dimension, dimension);
 
     int row = 0;
 
     for (int i = 0; i < dimension; ++i) {
-        a_matr.set(row, i, matr_row[i]);
+        equsys.set(row, i, matr_row[i]);
     }
 
     double vect_item = fetch_number(segments[1]);
-    b_vect[row] = vect_item;
+    equsys.set(row, vect_item);
 
     ++row;
 
@@ -33,11 +33,11 @@ void load_input(ifstream& input, matrix<double>& a_matr, vector<double>& b_vect)
             matr_row = fetch_numbers(segments[0]);
 
             for (int i = 0; i < dimension; ++i) {
-                a_matr.set(row, i, matr_row[i]);
+                equsys.set(row, i, matr_row[i]);
             }
 
             vect_item = fetch_number(segments[1]);
-            b_vect[row] = vect_item;
+            equsys.set(row, vect_item);
             ++row;
         }
     }

@@ -11,7 +11,8 @@ private:
 
 public:
     matrix()
-        : matrix(0, 0)
+        : _rows(0)
+        , _cols(0)
     {
     }
 
@@ -19,6 +20,20 @@ public:
         : _rows(rows)
         , _cols(cols)
     {
+        int size = rows * cols;
+        if (size > 0) {
+            _content.resize(size);
+        }
+    }
+
+    matrix(int dimension)
+        : _rows(dimension)
+        , _cols(dimension)
+    {
+        int size = dimension * dimension;
+        if (size > 0) {
+            _content.resize(size);
+        }
     }
 
     matrix(const matrix& original)
@@ -28,7 +43,7 @@ public:
     {
     }
 
-    virtual ~matrix() {}
+    virtual ~matrix() = default;
 
     void resize(int rows, int cols)
     {

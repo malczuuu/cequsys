@@ -10,4 +10,4 @@ add_executable(cequsys
         src/loader.cpp
         src/loader.hpp
         src/main.cpp
-        )
+        src/equsys.cpp src/equsys.hpp)
