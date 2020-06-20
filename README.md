@@ -21,7 +21,7 @@ Loads matrix and vector for the system of linear equation to solve from `input.t
     $ ./cequsys
     ```
 
-Generate equation system with following pattern with command `./gen {size} > input.txt`.
+Generate equation system with following pattern with command `./gen.py {size} > input.txt`.
 
 ```text
 2 2 0 0 0 0 ; 2
@@ -42,3 +42,7 @@ Generate equation system with following pattern with command `./gen {size} > inp
   0   0   0 1/3 1/3 1/3 ; 1/3
   0   0   0   0 1/3 1/3 ; 1/3
 ```
+
+## Code style
+
+Code should be formatted with `./format.sh` script (which internally uses `clang-format`).
