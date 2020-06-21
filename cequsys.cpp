@@ -136,13 +136,13 @@ public:
     }
 };
 
-static unique_ptr<solver_t> read_input(const string& filename);
+static shared_ptr<solver_t> read_input(const string& filename);
 
 static void write_output(const vector<double>& solution);
 
 int main(int argc, char* argv[])
 {
-    unique_ptr<solver_t> solver = read_input("input.txt");
+    shared_ptr<solver_t> solver = read_input("input.txt");
 
     solver->decompose_lu();
     vector<double> solution = solver->solve_lu();
@@ -206,7 +206,7 @@ static vector<double> fetch_numbers(const string& line)
     return nums;
 }
 
-static unique_ptr<solver_t> read_input(const string& filename)
+static shared_ptr<solver_t> read_input(const string& filename)
 {
     ifstream input;
     input.open(filename);
@@ -218,7 +218,7 @@ static unique_ptr<solver_t> read_input(const string& filename)
 
     int size = matr_row.size();
 
-    unique_ptr<solver_t> solver = make_unique<solver_t>(size);
+    shared_ptr<solver_t> solver = make_shared<solver_t>(size);
 
     int row = 0;
 
