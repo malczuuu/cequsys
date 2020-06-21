@@ -43,6 +43,12 @@ Generate equation system with following pattern with command `./gen.py {size} > 
   0   0   0   0 1/3 1/3 ; 1/3
 ```
 
+Running example from [`input.txt`](./input.txt) user should get following results:
+
+```text
+1.91616;1.60141;1.44354;1.40138;1.46393;1.64751
+```
+
 ## Code style
 
 Code should be formatted with `./format.sh` script (which internally uses `clang-format`).
