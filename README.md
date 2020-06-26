@@ -52,3 +52,7 @@ Running example from [`input.txt`](./input.txt) user should get following result
 ## Code style
 
 Code should be formatted with `./format.sh` script (which internally uses `clang-format`).
+
+## Trivia
+
+It's a revitalized project from college at [Cracow University of Technology](https://www.pk.edu.pl/).
